@@ -6,7 +6,7 @@ use Spreadsheet::WriteExcel;
 my $dir  = getcwd;
 my $inputDir = "$dir\\Test_Cases\\input";
 my $outputDir = "$dir\\Test_Cases\\output";
-#read input files.
+###read input files.
 opendir (DIR, $inputDir) or die "Cannot open $inputDir!\n";
 my @inputFiles = readdir DIR;
 closedir DIR;
