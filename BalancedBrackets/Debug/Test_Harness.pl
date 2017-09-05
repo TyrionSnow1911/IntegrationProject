@@ -6,7 +6,9 @@ use Spreadsheet::WriteExcel;
 my $dir  = getcwd;
 my $inputDir = "$dir\\Test_Cases\\input";
 my $outputDir = "$dir\\Test_Cases\\output";
-#read input files.
+print "$dir\n";
+print "$inputDir\n";
+print "$outputDir\n";#read input files.
 opendir (DIR, $inputDir) or die "Cannot open $inputDir!\n";
 my @inputFiles = readdir DIR;
 closedir DIR;
@@ -20,10 +22,11 @@ closedir DIR;
 my $i = 0;
 my $j = 0;
 
-while ($i < scalar @inputFiles && $j < scalar @outputFiles) {	system("$dir\\BalancedBrackets.exe $dir\\Test_Cases\\input\\$inputFiles[$i] $dir\\Test_Cases\\output\\$outputFiles[$j]");	$i++; $j++;}
+while ($i < scalar @inputFiles && $j < scalar @outputFiles) {	system("\"$dir\\BalancedBrackets.exe\" \"$dir\\Test_Cases\\input\\$inputFiles[$i]\" \"$dir\\Test_Cases\\output\\$outputFiles[$j]\"");	$i++; $j++;}
 #parse output file and write results to excel spreadsheet.
 #write results to excel spreadsheet.
-open my $fh, "<", "$dir\\output.txt" or die "Cannot open $dir\\output.txt!\n"; #open output file for reading.
+open my $fh, "<", "$dir\\output.txt" or die "Cannot open file: $!\n";
+#$dir/output.txt!\n"; #open output file for reading.
 
 my $wb = Spreadsheet::WriteExcel->new("$dir/results.xls"); #open new excel file for writing results of each test.
 my $ws = $wb->add_worksheet();$ws->write(0,0, "Input String"); # write column 1 title.
