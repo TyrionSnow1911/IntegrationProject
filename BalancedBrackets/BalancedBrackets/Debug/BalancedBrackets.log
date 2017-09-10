@@ -1,6 +1,0 @@
-﻿  stdafx.cpp
-  BalancedBrackets.cpp
-c:\users\gm\desktop\integrationproject\balancedbrackets\balancedbrackets\balancedbrackets.cpp(37): warning C4018: '<': signed/unsigned mismatch
-c:\users\gm\desktop\integrationproject\balancedbrackets\balancedbrackets\balancedbrackets.cpp(53): warning C4018: '<': signed/unsigned mismatch
-  BalancedBrackets.vcxproj -> C:\Users\GM\Desktop\IntegrationProject\BalancedBrackets\Debug\BalancedBrackets.exe
-  BalancedBrackets.vcxproj -> C:\Users\GM\Desktop\IntegrationProject\BalancedBrackets\Debug\BalancedBrackets.pdb (Partial PDB)
