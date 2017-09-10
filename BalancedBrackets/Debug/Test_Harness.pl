@@ -20,11 +20,10 @@ closedir DIR;
 my $i = 0;
 my $j = 0;
 
-while ($i < scalar @inputFiles && $j < scalar @outputFiles) {	system("\"$dir\\BalancedBrackets.exe\" \"$dir\\Test_Cases\\input\\$inputFiles[$i]\" \"$dir\\Test_Cases\\output\\$outputFiles[$j]\"");	$i++; $j++;}
+while ($i < scalar @inputFiles && $j < scalar @outputFiles) {	system("$dir\\BalancedBrackets.exe $dir\\Test_Cases\\input\\$inputFiles[$i] $dir\\Test_Cases\\output\\$outputFiles[$j]");	$i++; $j++;}
 #parse output file and write results to excel spreadsheet.
 #write results to excel spreadsheet.
-open my $fh, "<", "$dir\\output.txt" or die "Cannot open file: $!\n";
-
+open my $fh, "<", "$dir\\output.txt" or die "Cannot open $dir\\output.txt!\n"; #open output file for reading.
 
 my $wb = Spreadsheet::WriteExcel->new("$dir/results.xls"); #open new excel file for writing results of each test.
 my $ws = $wb->add_worksheet();$ws->write(0,0, "Input String"); # write column 1 title.

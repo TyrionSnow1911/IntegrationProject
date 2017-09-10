@@ -97,7 +97,6 @@ int main(int argc, char *argv[]) {
 		ifstream outfile(outputFile); //read in current output file using file stream.
 
 		string input;
-
 		while (getline(infile, input)) { //read current line in file.
 			if (!is_number(input)) {
 				string result;
