@@ -17,7 +17,7 @@ my @outputFiles = readdir DIR;
 closedir DIR;
 @outputFiles = grep {/.txt$/} @outputFiles;
 
-#test comment.my $i = 0;
+my $i = 0;
 my $j = 0;
 
 while ($i < scalar @inputFiles && $j < scalar @outputFiles) {	system("\"$dir\\BalancedBrackets.exe\" \"$dir\\Test_Cases\\input\\$inputFiles[$i]\" \"$dir\\Test_Cases\\output\\$outputFiles[$j]\"");	$i++; $j++;}
